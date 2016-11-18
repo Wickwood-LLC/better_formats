@@ -96,7 +96,7 @@ function better_formats_filter_process_format($element) {
   $show_tips       = user_access('show format tips');
   $show_tips_link  = user_access('show more format tips link');
   if (!$show_selection) {
-    $element['format']['format']['#access'] = FALSE;
+    $element['format']['format']['#type'] = 'hidden';
   }
   if (!$show_tips) {
     $element['format']['guidelines']['#access'] = FALSE;
@@ -143,7 +143,7 @@ function better_formats_filter_process_format($element) {
       // If there is only one allowed format, deny access to the text format
       // selector for cosmetic reasons, just like filter_process_format() does.
       if (count($options) == 1) {
-        $element['format']['format']['#access'] = FALSE;
+        $element['format']['format']['#type'] = 'hidden';
         $show_selection = FALSE;
       }
 
@@ -181,7 +181,7 @@ function better_formats_filter_process_format($element) {
           // Force access to the format selector (it may have been denied
           // previously for cosmetic reasons).
           $element['format']['#access'] = TRUE;
-          $element['format']['format']['#access'] = TRUE;
+          $element['format']['format']['#type'] = 'select';
         }
       }
     }
