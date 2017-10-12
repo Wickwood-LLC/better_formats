@@ -2,3 +2,6 @@ name = Better Formats
 description = Enhances the core input format system by managing input format defaults and settings.
 core = 7.x
 configure = admin/config/content/formats
+
+version = "7.x-1.0-beta2"
+project = "better_formats"
